@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Hyderabad Metro - Hyderabad Metro Rail</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Preload large image -->
+    <link rel="preload" href="images/Metro map.jpg" as="image">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Metro map.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 70px;
+        }
+        
+        .about-hero h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .about-hero p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 18px;
+            animation: fadeInUp 1s ease-out;
+        }
+        /* Keep the rest of the styles same as your Delhi Metro code */
+        
+        .about-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            align-items: center;
+        }
+        
+        .about-grid:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .about-grid:nth-child(even) .about-text {
+            direction: ltr;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #0954c9;
+        }
+        
+        .about-text p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        
+        .stats-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+        
+        .stats-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 40px;
+            font-weight: 700;
+            color: #0954c9;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .timeline-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 0 0 0 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 15px;
+            height: 100%;
+            width: 2px;
+            background: #ddd;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -40px;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #0954c9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 0 0 4px white, 0 0 0 6px rgba(9, 84, 201, 0.3);
+        }
+        
+        .timeline-content {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-date {
+            font-size: 14px;
+            color: #0954c9;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .timeline-desc {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .about-grid:nth-child(even) {
+                direction: ltr;
+            }
+            .timeline {
+                padding-left: 30px;
+            }
+            .timeline::before {
+                left: 10px;
+            }
+            .timeline-dot {
+                left: -30px;
+                width: 24px;
+                height: 24px;
+                font-size: 12px;
+            }
+            .about-hero h1 {
+                font-size: 32px;
+            }
+            .about-hero p {
+                font-size: 16px;
+                padding: 0 20px;
+            }
+        }
+        /* Add loading spinner for images */
+        
+        .image-loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(245, 245, 245, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #0954c9;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>Hyderabad Metro Rail</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About</a>
+                <a href="map.html">Metro Map</a>
+                <a href="fares.html">Fares</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="about-hero">
+        <div class="container">
+            <h1>About Hyderabad Metro</h1>
+            <p>Revolutionizing urban transportation in Hyderabad since 2017</p>
+        </div>
+    </div>
+
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-loader" id="image1Loader">
+                        <div class="spinner"></div>
+                    </div>
+                    <img src="images/MetroMapPic1.jpg" alt="Hyderabad Metro Train" id="aboutImage1">
+                </div>
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Hyderabad Metro Rail is a rapid transit system serving the city of Hyderabad and its suburbs. It is one of India's largest metro networks in terms of length and ridership.</p>
+                    <p>Since 2017, Hyderabad Metro has provided safe, efficient, and comfortable transportation, transforming the way residents commute across the city.</p>
+                </div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="image-loader" id="image2Loader">
+                        <div class="spinner"></div>
+                    </div>
+                    <img src="images/MetroMapPic2.webp" alt="Hyderabad Metro Station" id="aboutImage2">
+                </div>
+                <div class="about-text">
+                    <h2>Our Mission</h2>
+                    <p>Hyderabad Metro aims to provide safe, efficient, and sustainable urban transportation for the citizens of Hyderabad.</p>
+                    <p>Our mission is to reduce traffic congestion, promote eco-friendly travel, and enhance connectivity across the city while providing world-class metro services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">58+</div>
+                <div class="stat-label">Stations</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">72+</div>
+                <div class="stat-label">Kilometers of Track</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label">Lines</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">0.4M+</div>
+                <div class="stat-label">Daily Ridership</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <div class="section-title">
+            <h2>Our Journey Through the Years</h2>
+            <p>The evolution of Hyderabad Metro from inception to becoming a major urban transit system</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2010</div>
+                        <h3 class="timeline-title">Project Initiation</h3>
+                        <p class="timeline-desc">Hyderabad Metro project was approved by the Government of India and Telangana state to improve urban transport in Hyderabad.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2012</div>
+                        <h3 class="timeline-title">Construction Begins</h3>
+                        <p class="timeline-desc">Construction work commenced with modern elevated and underground metro lines planned across the city.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2017</div>
+                        <h3 class="timeline-title">First Line Inauguration</h3>
+                        <p class="timeline-desc">The Red Line from Miyapur to LB Nagar was inaugurated, marking the start of metro services in Hyderabad.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h3 class="timeline-title">Network Expansion</h3>
+                        <p class="timeline-desc">Green Line and other corridors opened, increasing the metro network coverage in the city.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">5</div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020-Present</div>
+                        <h3 class="timeline-title">Further Growth</h3>
+                        <p class="timeline-desc">Extensions and new lines are under development to connect more areas of Hyderabad for better urban mobility.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> Helpline: 1800-890-345</p>
+                <p><i class="fas fa-envelope"></i> Email: helpdesk@hyderabadmetrorail.in</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="about.html">About Hyderabad Metro</a>
+                <a href="#">Latest News</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 Hyderabad Metro Rail Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Add script to handle image loading -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = [{
+                img: document.getElementById('aboutImage1'),
+                loader: document.getElementById('image1Loader')
+            }, {
+                img: document.getElementById('aboutImage2'),
+                loader: document.getElementById('image2Loader')
+            }];
+
+            images.forEach(item => {
+                if (item.img.complete) {
+                    item.loader.style.display = 'none';
+                } else {
+                    item.img.onload = function() {
+                        item.loader.style.display = 'none';
+                    };
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
