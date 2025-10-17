@@ -74,12 +74,12 @@ cd Hyderabad-Metro-App
 ```
 2 .Compile:
 ```
-javac MetroApp.java
+javac hydMetro.java
 ```
 
 3 .Run:
 ```
-java MetroApp
+java hydMetro
 ```
 
 ✨ Example Output
