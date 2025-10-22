@@ -52,7 +52,7 @@ $$
 | Shortest Path Logic  | Java (Dijkstra)                              |
 | Executable Generator | `MetroApp.java` compiled to `hyderabad_metro.exe` |
 | Web UI               | HTML, CSS, JavaScript                        |
-| Hosting              | Render                                       |
+| Hosting              | Render (open source)                                      |
 
 ---
 
